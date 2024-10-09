@@ -10,6 +10,18 @@ function test(){
     console.log('Länge: ' + arrayField.length);
 }
 
+// löschen aller Einträge
+function deleteAll(){
+    while(arrayField.length){
+        arrayField.pop();
+    }
+}
+
+// löschen des letzten Eintrages
+function deleteLast(){
+    arrayField.pop();
+}
+
 // Eingabe bestätigen
 function submitInput(){
     
@@ -54,6 +66,8 @@ function renderVisual(){
                         </div>
                         <input type="submit" value="confirm" id="confirm" onClick={submitInput}></input>
                         <input type="submit" value="test" onClick={test}></input>
+                        <input type="submit" value="delete last item" onClick={deleteLast} ></input>
+                        <input type="submit" value="delete all" onClick={deleteAll} ></input>
                     </div>
                 </div>
             </>

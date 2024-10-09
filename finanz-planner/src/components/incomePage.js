@@ -2,7 +2,11 @@ import IncomeChart from "../assets/incomeChart";
 import '../App.css';
 
 const renderPage = false;
-let arrayField = [];
+let arrayField = [
+    {contentName: "Business1", contentValue: 540 },
+    {contentName: "Business2", contentValue: 678 },
+    {contentName: "Business3", contentValue: 800 },
+];
 
 function test(){
     
@@ -28,20 +32,17 @@ function submitInput(){
     let contentName = document.getElementById("name").value;
     let contentValue = document.getElementById("value").value;
 
-    if(contentName === ""){
-        contentName = 'Default';
+    if(contentName === "" || contentValue === "" || typeof contentValue === 'number' || typeof contentName === 'string' ){
+        alert("Bitte valide Eingabe machen | Name => Text | Einkommen => Fließkommazahl")
+    } else {
+        arrayField.push({contentName, contentValue});
+        console.log(arrayField);
+
+        // setzt Eingabe zurück
+        document.getElementById("name").value = "";
+        document.getElementById("value").value = "";
     }
 
-    if(contentValue === ""){
-        contentValue = 'Default';
-    }
-
-    arrayField.push({contentName, contentValue});
-    console.log(arrayField);
-
-    // setzt Eingabe zurück
-    document.getElementById("name").value = "";
-    document.getElementById("value").value = "";
 }
 
 // rendert wenn Eingabe getätigt wurde

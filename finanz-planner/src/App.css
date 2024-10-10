@@ -77,4 +77,15 @@
   margin-right: 10px;
 }
 
+#tableChart{
+  display: inline-block;
+}
+
+#incomeChart{
+  margin-right: 10px;
+}
+
+#dataList{
+ 
+}
 /*---IncomePage---*/

@@ -1,11 +1,12 @@
 import IncomeChart from "../assets/incomeChart";
+import DataList from "../assets/dataList"
 import '../App.css';
 
 const renderPage = false;
 let arrayField = [
-    {contentName: "Business1", contentValue: 540 },
-    {contentName: "Business2", contentValue: 678 },
-    {contentName: "Business3", contentValue: 800 },
+    {name: "Business1", value: 540 },
+    {name: "Business2", value: 678 },
+    {name: "Business3", value: 800 },
 ];
 
 function test(){
@@ -32,7 +33,7 @@ function submitInput(){
     let contentName = document.getElementById("name").value;
     let contentValue = document.getElementById("value").value;
 
-    if(contentName === "" || contentValue === "" || typeof contentValue === 'number' || typeof contentName === 'string' ){
+    if(contentName === "" || contentValue === "" ){
         alert("Bitte valide Eingabe machen | Name => Text | Einkommen => Fließkommazahl")
     } else {
         arrayField.push({contentName, contentValue});
@@ -61,14 +62,23 @@ function renderVisual(){
                             <label className="labelIncome">name of business:</label>
                             <input type="text" className="inputfield" id="name"></input>
                         </div>
+                        
                         <div>
                             <label className="labelIncome">income:</label>
                             <input type="text" className="inputfield" id="value"></input>
                         </div>
+                        
                         <input type="submit" value="confirm" id="confirm" onClick={submitInput}></input>
                         <input type="submit" value="test" onClick={test}></input>
                         <input type="submit" value="delete last item" onClick={deleteLast} ></input>
                         <input type="submit" value="delete all" onClick={deleteAll} ></input>
+                        <p></p>
+
+                        <div id="tableChart">
+                            <IncomeChart dataInput={arrayField} id="incomeChart"></IncomeChart>
+                            <DataList dataArray={arrayField} id="dataList"></DataList>
+                        </div>
+                        
                     </div>
                 </div>
             </>

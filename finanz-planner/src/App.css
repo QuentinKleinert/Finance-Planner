@@ -48,6 +48,7 @@
 
 #incomeComponent{
   text-align: center;
+  background-color: lightblue;
 }
 
 #header{
@@ -78,14 +79,10 @@
 }
 
 #tableChart{
-  display: inline-block;
+  
 }
 
 #incomeChart{
-  margin-right: 10px;
-}
-
-#dataList{
- 
+  display: inline-block;
 }
 /*---IncomePage---*/

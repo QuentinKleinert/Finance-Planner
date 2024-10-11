@@ -76,7 +76,6 @@ function renderVisual(){
 
                         <div id="tableChart">
                             <IncomeChart dataInput={arrayField} id="incomeChart"></IncomeChart>
-                            <DataList dataArray={arrayField} id="dataList"></DataList>
                         </div>
                         
                     </div>
